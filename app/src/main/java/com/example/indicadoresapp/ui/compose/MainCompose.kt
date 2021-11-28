@@ -36,12 +36,13 @@ fun HomeCompose(
 
 
     //val valorUF = viewModel.listadoUFLD.observeAsState().value?.get(0)?.valor
-    val valorDolar = viewModel.listadoDolar.asLiveData().observeAsState().value?.get(0)?.valor
+    val valorDolar = viewModel.listadoDolar.observeAsState().value?.get(0)?.valor
     val valorUF = viewModel.ufHOYLD.observeAsState().value?.valor
-    val valorEuro = viewModel.listadoEuro.asLiveData().observeAsState().value?.get(0)?.valor
-    //val valorUtm = viewModel.listadoUtm.asLiveData().observeAsState().value?.get(1)?.valor
-    val valorUtm by viewModel.prueba
-
+    val valorEuro = viewModel.listadoEuro.observeAsState().value?.get(0)?.valor
+    val valorUtm = viewModel.listadoUtm.observeAsState().value?.get(0)?.valor
+    //val valorUtm by viewModel.prueba
+    //val euro by viewModel.listadoDolar{}
+    val dolar by viewModel.dolarHoy.collectAsState(Dolar())
 
 
 
@@ -67,7 +68,7 @@ fun HomeCompose(
             Row(modifier = modifier.fillMaxSize()) {
 
                 Column {
-                    Tarjeta(titulo = "USD", monto = valorDolar.toString())
+                    Tarjeta(titulo = "USD", monto = "dolar.toString()")
                     Tarjeta(titulo = "UF", color = yellowCard, monto = valorUF.toString())
 
 

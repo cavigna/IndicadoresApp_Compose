@@ -22,17 +22,22 @@ class IndiViewModel(private val repositorio: Repositorio) : ViewModel() {
 
     val listadoUFLD = repositorio.listadoUF().asLiveData()
     var listadoUf = mutableStateOf(listOf(UF()))
-    val ufHOYLD = repositorio.ufHoy().asLiveData()
+
     var ufHoy = mutableStateOf(UF())
 
     //var listadoDolars = mutableStateListOf<Dolar>()
 
-    var listadoDolar = repositorio.listadoDolar()
-    var listadoEuro = repositorio.listadoEuro()
-    var listadoUtm = repositorio.listadoUTM()
+    val ufHOYLD = repositorio.ufHoy().asLiveData()
+    var listadoDolar = repositorio.listadoDolar().asLiveData()
+    var listadoEuro = repositorio.listadoEuro().asLiveData()
+    var listadoUtm = repositorio.listadoUTM().asLiveData()
+
+    val euro = repositorio.listadoEuro().asLiveData().value?.get(0)
 
 
-    var prueba = repositorio.listadoUTM().collectAsState(listOf())
+   // var prueba = repositorio.listadoUTM().collectAsState(listOf())
+
+    var dolarHoy = repositorio.dolarHoy()
 
 
 

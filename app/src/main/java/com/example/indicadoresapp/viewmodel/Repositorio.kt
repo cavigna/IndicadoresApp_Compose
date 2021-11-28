@@ -28,6 +28,7 @@ class Repositorio(private val api: ApiService, private val dao: IndiceDao) {
     fun listadoEuro() = dao.listadoEuro()
     fun listadoUTM() = dao.listadoUTMDB()
     fun ufHoy() = dao.ufHoy(hoyDia())
+    fun dolarHoy() = dao.dolarHoy(hoyDia())
 
 
 

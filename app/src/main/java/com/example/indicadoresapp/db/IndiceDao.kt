@@ -29,6 +29,9 @@ interface IndiceDao {
     @Query ("SELECT * FROM dolar_tabla")
     fun listadoDolar(): Flow<List<Dolar>>
 
+    @Query("SELECT * FROM dolar_tabla WHERE fecha =:hoy")
+    fun dolarHoy(hoy:String): Flow<Dolar>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun agregarListadoEuro(listadoEuro: List<Euro>)
 
